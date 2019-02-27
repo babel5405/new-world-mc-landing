@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>New-World</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="CC0 Landing Page Template for Minecraft">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="./css/main.css">
+    </head>
+
+    <body>
+        <section id="grid-wrapper">
+            <header id="headline">
+                <h1>New-World<i class="fas fa-globe-americas"></i></h1>
+                <h3>Disembark and have an adventure!</h3>
+            </header>
+            <main>
+                <section id="server">
+                    <section class="content">
+                            <div id="heading">
+                                <i class="far fa-copy"></i>
+                                <p>Start Playing Now!</p>
+                            </div>
+                            <p class="ip">Play.NewWorld.mc</p>
+                    </section>
+                </section>
+                <nav id="links">
+                    <a href="#"><i class="fas fa-volleyball-ball"></i><span class="link-Text">Play</span></a>
+                    <a href="#"><i class="far fa-comments"></i><span class="link-Text">Forum</span></a>
+                    <a href="#"><i class="fab fa-discord"></i><span class="link-Text">Discord</span></a>
+                    <a href="#"><i class="fab fa-facebook"></i><span class="link-Text">Facebook</span></a>
+                    <a href="#"><i class="fab fa-reddit-square"></i></i><span class="link-Text">Reddit</span></a>
+                    <a href="#"><i class="fas fa-server"></i><span class="link-Text">Server List A</span></a>
+                </nav>
+            </main>
+            <footer id="footer">
+                <p>&copy; 2018 Server Name Here</p>
+            </footer>
+        </section>
+
+        <script>
+            // NOTE: This script is written for a single IP, it will not work if multiple
+            // are added to the page.
+            document.querySelector("section#server .content").addEventListener("click", function() {
+                // Select the IP
+                var ip = document.querySelector("section#server .content p.ip"); // If you change the class or formatting of the IP area you may need to change this selector.
+                if (window.getSelection && document.createRange) {
+                    let selected = window.getSelection();
+                    let range = document.createRange();
+                    range.selectNodeContents(ip);
+                    selected.removeAllRanges();
+                    selected.addRange(range);
+                } else if (document.body.createTextRange) {
+                    let range = document.body.createTextRange();
+                    range.moveToElementText(ip);
+                    range.select();
+                }
+
+                // Copy it to the Clipboard
+                document.execCommand('copy')
+            });
+        </script>
+    </body>
+
+</html>

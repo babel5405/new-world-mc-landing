@@ -1,0 +1,177 @@
+@media (pointer:none), (pointer:coarse) {
+    body {
+        overflow-Y: scroll !important;
+    }
+}
+
+@media (max-width:700px) {
+    body {
+        overflow-Y: scroll !important;
+    }
+
+    #links {
+        width: 100% !important;
+    }
+
+    header i {
+        display: none;
+    }
+}
+
+body::before {
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: -1; /* Ensure this stays under all elements */
+    background-image: url("../img/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px) saturate(70%) brightness(75%);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    color: #FFF;
+    overflow: hidden;
+    background-color: black;
+    font-family: arial;
+}
+
+/* Page Layout **/
+#grid-wrapper {
+    display: grid;
+    grid-template-rows: 3fr 5fr 1fr;
+    min-height: 100vh;
+    padding: 2vh 2vw 2vw 2vh;
+}
+
+header {
+    display: grid;
+    align-content: center;
+    font-style: oblique;
+    font-family: "Trebuchet MS";
+    padding-left: 5vw;
+    margin-bottom: 10vh;
+}
+
+header i {
+    position: relative;
+    top: -10px;
+}
+
+#headline h1 {
+    font-size: 4em;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.5));
+    user-select: none;
+}
+
+#headline h1 i {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+#headline h3 {
+    font-size: 1.5em;
+}
+
+main {
+    display: grid;
+    align-content: center;
+    grid-template-rows: 0.8fr 0.2fr;
+}
+
+section#server {
+    display: grid;
+    align-content: start;
+    justify-content: center;
+    cursor: pointer;
+}
+
+section#server .content:hover > p {
+    opacity: 0.7;
+}
+
+section#server p{
+    padding: 0px;
+    margin: 0px;
+}
+
+section#server .content {
+    filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.7));
+    background-color: rgba(126, 126, 126, 0.5);
+}
+
+section#server div#heading {
+    padding: 15px;
+    display: grid;
+    justify-content: start;
+    align-content: center;
+    background-color: rgba(255, 255, 255, 0.959);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+section#server div#heading i {
+    font-size: 2em;
+    grid-row: 1;
+}
+
+section#server div#heading p {
+    grid-row: 1;
+    font-size: 2em;
+    font-weight: bold;
+    display: grid;
+    align-content: center;
+    margin-left: 15px;
+}
+
+section#server p.ip {
+    filter: drop-shadow(5px 5px 3px rgba(0,0,0,0.5));
+    font-size: 3em;
+    padding: 0.5em;
+}
+
+#links {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(5em, 1fr) );
+    grid-gap: 5em;
+}
+
+#links a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    display: grid;
+    grid-row: 1fr 1fr;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+a:hover {
+    transform: scale(0.95);
+    filter: drop-shadow(2px 2px 2px rgba(165, 207, 255, 0.527));
+}
+
+a i {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+a .text-link {
+
+}
+
+footer {
+    display: grid;
+    align-content: end;
+    justify-content: center;
+    padding-bottom: 2vh;
+}
